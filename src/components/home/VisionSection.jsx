@@ -16,8 +16,9 @@ function VisionSection({ t }) {
       </h2>
 
       <p className="vision__body" style={sF(t)}>
-        ClyMind is more than a product. It's a movement where every habit
-        completed is a step toward a better self — and a healthier world.
+        ClyMind is more than a product. It's a movement, 
+        where every habit you build is a step toward a 
+        better self, and a healthier planet.
       </p>
     </div>
   );

@@ -34,9 +34,8 @@ function ProblemSection({ t }) {
           We've lost<br />daily <span className="accent">Motivation</span>
         </h2>
         <p className="problem__body">
-          Most people start strong — but without a visible, living anchor,
-          motivation fades fast. Discipline stays invisible.
-          And invisible things die.
+          Most people start strong, but without a visible, living anchor,
+          motivation fades fast. Discipline stays invisible, and invisible things die.
         </p>
       </div>
 

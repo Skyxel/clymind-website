@@ -4,8 +4,8 @@ import './SolutionSection.css';
 const STEPS = [
   {
     num: '01',
-    title: 'Act on your habits',
-    body: 'Complete your daily missions in the app — from workouts to reading, meditation, and more.',
+    title: 'You complete your goals',
+    body: 'Complete your daily missions in the app, from workouts to reading, education, and more.',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="var(--clr-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="24" cy="24" r="20" fill="var(--clr-green)" fillOpacity="0.08" stroke="none" />
@@ -16,7 +16,7 @@ const STEPS = [
   },
   {
     num: '02',
-    title: 'The app tracks it',
+    title: 'ClyMind remembers every effort',
     body: 'ClyMind registers every action. Your consistency score builds in real time, day by day.',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="var(--clr-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -32,7 +32,7 @@ const STEPS = [
   {
     num: '03',
     title: 'Your plant grows',
-    body: 'The vase responds to your consistency. Miss days and it struggles. Stay disciplined and it flourishes.',
+    body: 'The plant responds to your consistency. Miss days and it struggles. Stay disciplined and watch it flourish.',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="var(--clr-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="24" cy="24" r="20" fill="var(--clr-green)" fillOpacity="0.08" stroke="none" />

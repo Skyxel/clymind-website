@@ -48,7 +48,7 @@
 }
 
 .why__proof-num {
-  font-size: 1.75rem;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
   font-weight: 900;
   letter-spacing: -0.04em;
   color: var(--clr-green);

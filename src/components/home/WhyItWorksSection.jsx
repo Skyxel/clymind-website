@@ -4,7 +4,7 @@ import './WhyItWorksSection.css';
 const REASONS = [
   {
     title: 'Psychology',
-    body: 'Visual cues of a living plant trigger intrinsic motivation — a proven mechanism for long-term habit formation.',
+    body: 'Visual cues of a living plant trigger intrinsic motivation, a proven mechanism for long-term habit formation.',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="var(--clr-green)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="24" cy="24" r="20" fill="var(--clr-green)" fillOpacity="0.08" stroke="none" />
@@ -93,7 +93,7 @@ function WhyItWorksSection({ t }) {
         <div className="why__proof">
           <div className="why__proof-item">
             <span className="why__proof-num">+30%</span>
-            <span className="why__proof-label">productive hours/week — SUPSI study</span>
+            <span className="why__proof-label">productive hours/week (SUPSI study)</span>
           </div>
           <div className="why__proof-item">
             <span className="why__proof-num">−50%</span>
