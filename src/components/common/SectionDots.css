@@ -1,0 +1,121 @@
+.section-dots {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  padding: 0.8rem 2rem 0.95rem;
+  background-color: var(--clr-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.section-dots--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.section-dots__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  min-width: 110px;
+  flex: 1 1 0;
+  max-width: 160px;
+  color: inherit;
+  font: inherit;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  position: relative;
+  opacity: 0.56;
+  transition: opacity 0.25s ease;
+}
+
+.section-dots__item:hover,
+.section-dots__item:focus-visible {
+  opacity: 0.82;
+}
+
+.section-dots__item::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: calc(-50% + 7px);
+  width: calc(100% - 14px);
+  height: 1.5px;
+  background: rgba(74, 122, 85, 0.22);
+  pointer-events: none;
+}
+
+.section-dots__item:first-child::before {
+  display: none;
+}
+
+.section-dots__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: rgba(74, 122, 85, 0.28);
+  border: 2px solid var(--clr-bg);
+  box-shadow: 0 0 0 1px rgba(74, 122, 85, 0.22);
+  flex-shrink: 0;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.section-dots__item--active .section-dots__dot {
+  background-color: var(--clr-green);
+  box-shadow: 0 0 0 1px rgba(74, 122, 85, 0.38);
+  transform: scale(1.15);
+}
+
+.section-dots__label {
+  font-size: 0.685rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  opacity: 1;
+  transform: none;
+  transition: color 0.25s ease, opacity 0.25s ease;
+  text-align: center;
+  line-height: 1.3;
+  white-space: normal;
+}
+
+.section-dots__item--active .section-dots__label {
+  color: var(--clr-green);
+}
+
+.section-dots__item--active {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .section-dots {
+    gap: 0.5rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-inline: 1rem;
+  }
+
+  .section-dots__item {
+    min-width: 84px;
+    max-width: 104px;
+  }
+
+  .section-dots__label {
+    font-size: 0.62rem;
+  }
+}

@@ -1,4 +1,12 @@
-// TODO: PageWrapper – wraps every page with Navbar + Footer + main content
+import Navbar from './Navbar';
+import BackToTop from '../common/BackToTop';
+
 export default function PageWrapper({ children }) {
-  return null;
+  return (
+    <>
+      <Navbar />
+      <main>{children}</main>
+      <BackToTop />
+    </>
+  );
 }

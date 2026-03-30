@@ -1,0 +1,35 @@
+.vision__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 2.5rem;
+}
+
+.vision__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--clr-text);
+}
+
+.vision__left,
+.vision__right {
+  display: block;
+}
+
+.vision__body {
+  font-size: 1.0625rem;
+  color: var(--clr-muted);
+  line-height: 1.7;
+  max-width: 52ch;
+  margin: 0;
+}

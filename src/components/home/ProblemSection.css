@@ -1,0 +1,78 @@
+.problem__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 2.5rem;
+}
+
+/* Left */
+.problem__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.problem__headline {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--clr-text);
+  margin: 0;
+}
+
+.problem__body {
+  font-size: 1.0625rem;
+  color: var(--clr-muted);
+  line-height: 1.7;
+  max-width: 38ch;
+}
+
+/* Right — two stats side by side */
+.problem__right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Each stat block */
+.prob-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Large equal % number */
+.prob-stat__pct {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--clr-text);
+  line-height: 1;
+}
+
+/* Same size chart area for both */
+.prob-stat__chart {
+  width: 100%;
+  height: 140px;
+}
+
+.prob-stat__label {
+  font-size: 0.875rem;
+  color: var(--clr-muted);
+  text-align: center;
+  line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+  .problem__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

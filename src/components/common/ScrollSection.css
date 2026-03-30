@@ -1,0 +1,14 @@
+.scroll-section {
+  position: relative;
+}
+
+.scroll-section__sticky {
+  position: sticky;
+  top: var(--navbar-height);
+  height: calc(100vh - var(--navbar-height));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-bg);
+}
