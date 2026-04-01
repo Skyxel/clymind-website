@@ -33,3 +33,40 @@
   max-width: 52ch;
   margin: 0;
 }
+
+.vision__actions {
+  display: flex;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.vision__btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.vision__btn--primary {
+  background: var(--clr-green);
+  color: #ffffff;
+}
+
+.vision__btn--primary:hover {
+  background: var(--clr-green-hover);
+}
+
+.vision__btn--ghost {
+  background: transparent;
+  color: var(--clr-text);
+  border: 1.5px solid rgba(0, 0, 0, 0.18);
+}
+
+.vision__btn--ghost:hover {
+  border-color: var(--clr-text);
+}

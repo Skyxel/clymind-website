@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './PartnerContactSection.css';
 
 const FORMSPREE_URL = 'https://formspree.io/f/xpqolpzp';
 
 export default function PartnerContactSection() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('contact') === 'open') setOpen(true);
+  }, []);
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
   const [fields, setFields] = useState({ name: '', organisation: '', email: '' });
 
