@@ -7,6 +7,8 @@ const NAV_LINKS = [
   { label: 'About', href: '/about' },
 ];
 
+const currentPath = window.location.pathname;
+
 export default function Navbar() {
   return (
     <header className="navbar">
@@ -23,7 +25,7 @@ export default function Navbar() {
               <li key={label}>
                 <a
                   href={href}
-                  className={`navbar__link${label === 'Home' ? ' navbar__link--active' : ''}`}
+                  className={`navbar__link${currentPath === href ? ' navbar__link--active' : ''}`}
                 >
                   {label}
                 </a>

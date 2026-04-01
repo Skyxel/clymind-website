@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 import { useScrollSnap } from '../../hooks/useScrollSnap';
 import SectionDots from './SectionDots';
@@ -6,6 +6,25 @@ import './ScrollStory.css';
 
 function easeOut(x) {
   return 1 - (1 - x) * (1 - x);
+}
+
+function smoothScrollTo(target, duration = 900) {
+  const start = window.scrollY;
+  const delta = target - start;
+  const startTime = performance.now();
+
+  function ease(t) {
+    return t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2;
+  }
+
+  function step(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, start + delta * ease(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
 }
 
 /** Middle sections: enter → pause → exit */
@@ -63,6 +82,33 @@ export default function ScrollStory({ sections, sectionHeight = '170vh' }) {
 
   useScrollSnap(getSnapPoints);
 
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      e.preventDefault();
+
+      const points = getSnapPoints();
+      const y = window.scrollY;
+
+      // Find the snap point nearest to current scroll
+      let currentIdx = 0;
+      let minDist = Infinity;
+      points.forEach((p, i) => {
+        const d = Math.abs(p - y);
+        if (d < minDist) { minDist = d; currentIdx = i; }
+      });
+
+      const nextIdx = e.key === 'ArrowDown'
+        ? Math.min(currentIdx + 1, points.length - 1)
+        : Math.max(currentIdx - 1, 0);
+
+      smoothScrollTo(points[nextIdx]);
+    }
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [getSnapPoints]);
+
   const ts = sections.map((_, i) => {
     const lp = Math.max(0, Math.min(1, progress * N - i));
     if (i === 0) return getFirstT(lp);
@@ -80,7 +126,7 @@ export default function ScrollStory({ sections, sectionHeight = '170vh' }) {
   function handleSectionSelect(index) {
     const target = snapPoints[index + 1];
     if (typeof target !== 'number') return;
-    window.scrollTo({ top: target, behavior: 'smooth' });
+    smoothScrollTo(target);
   }
 
   return (

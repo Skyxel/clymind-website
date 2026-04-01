@@ -1,0 +1,161 @@
+.supporters {
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--clr-bg);
+}
+
+.supporters__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.supporters__inner.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.supporters__label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-green);
+  margin-bottom: 0.75rem;
+}
+
+.supporters__headline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--clr-text);
+  margin: 0 0 var(--space-lg);
+}
+
+/* Logo grid */
+.supporters__logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+/* Individual supporter card */
+.supporter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: var(--space-md);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  transition: border-color 0.3s ease;
+  overflow: visible;
+}
+
+.supporter:hover {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Logo image */
+.supporter__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.supporter:hover .supporter__logo-wrap {
+  transform: translateY(-14px) scale(1.1);
+}
+
+.supporter__logo {
+  max-height: 72px;
+  max-width: 180px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.65;
+  transition: filter 0.35s ease, opacity 0.35s ease;
+}
+
+.supporter:hover .supporter__logo {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* Info card that appears on hover */
+.supporter__card {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(100% + 4px));
+  width: 280px;
+  background: var(--clr-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(0,0,0,0.06);
+  padding: 1rem 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateX(-50%) translateY(calc(100% + 12px));
+  z-index: 10;
+}
+
+.supporter:hover .supporter__card {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(calc(100% + 4px));
+}
+
+.supporter__card-name {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-text);
+  margin: 0 0 0.4rem;
+}
+
+.supporter__card-thanks {
+  font-size: 0.875rem;
+  color: var(--clr-muted);
+  line-height: 1.55;
+  margin: 0 0 0.6rem;
+}
+
+.supporter__card-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--clr-green);
+}
+
+@media (max-width: 768px) {
+  .supporters__logos {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .supporter__card {
+    position: static;
+    transform: none;
+    width: 100%;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.08);
+    margin-top: var(--space-sm);
+  }
+
+  .supporter:hover .supporter__logo-wrap {
+    transform: none;
+  }
+}
