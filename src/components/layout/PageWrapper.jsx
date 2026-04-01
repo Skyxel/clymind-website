@@ -1,4 +1,5 @@
 import Navbar from './Navbar';
+import Footer from './Footer';
 import BackToTop from '../common/BackToTop';
 
 export default function PageWrapper({ children }) {
@@ -6,6 +7,7 @@ export default function PageWrapper({ children }) {
     <>
       <Navbar />
       <main>{children}</main>
+      <Footer />
       <BackToTop />
     </>
   );

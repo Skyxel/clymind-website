@@ -1,0 +1,100 @@
+.product-hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-text);
+  padding: var(--space-xl) var(--space-md);
+  padding-top: calc(var(--navbar-height) + var(--space-xl));
+}
+
+.product-hero__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.product-hero__label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-green);
+}
+
+.product-hero__headline {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0;
+  max-width: 14ch;
+}
+
+.product-hero__sub {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  max-width: 52ch;
+  margin: 0;
+}
+
+.product-hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.product-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  border: none;
+}
+
+.product-hero__cta--primary {
+  background-color: var(--clr-green);
+  color: #ffffff;
+}
+
+.product-hero__cta--primary:hover {
+  background-color: var(--clr-green-hover);
+}
+
+.product-hero__cta--ghost {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.product-hero__cta--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .product-hero {
+    min-height: 75vh;
+    padding: calc(var(--navbar-height) + var(--space-lg)) var(--space-sm) var(--space-lg);
+  }
+
+  .product-hero__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
